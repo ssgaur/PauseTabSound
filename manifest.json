@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Quick Pause Audio Tab",
+  "description": "A chrome extesntion to pause the Audio/Video being palyed in other tabs without navigating into it.",
+  "version": "1.0",
+  "incognito" : "spanning",
+
+  "browser_action": {
+    "default_icon": "play.png"
+  },
+  "background": {
+    "scripts": ["script.js"]
+  },
+  "permissions": [
+     "tabs", "*://*/*"
+  ]
+}
