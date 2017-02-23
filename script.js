@@ -1,10 +1,10 @@
-function pauseYoutube(){
+function pauseSound(){
 	chrome.tabs.query({}, function(tabs){
         for(var i = 0; i < tabs.length; i++) {
             var found = tabs[i].url.search(/.*youtube.*/);
-            console.log(tabs[i]);
+            var foundFB = tabs[i].url.search(/.*facebook.*/);
+            //console.log(tabs[i]);
             if(found != -1 ){
-
                 chrome.tabs.executeScript(tabs[i].id,
                 	{
                     	code:'document.getElementsByClassName("ytp-play-button")[0].click();'
@@ -12,7 +12,20 @@ function pauseYoutube(){
                  	function(results){
                  		console.log("Callback worked")}
                  );
-            }                    
+            }   
+
+            if (foundFB != -1) {
+              console.log(tabs[i].audible );
+              if ( tabs[i].audible ) {
+                 chrome.tabs.executeScript(tabs[i].id,
+                  {
+                      file:'fb.js'
+                  },
+                  function(results){
+                    console.log("Callback worked")}
+                 );
+              }
+            }                
         }
     });
 }
@@ -27,7 +40,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   else{
     chrome.browserAction.setIcon({path: "pause.png", tabId:tab.id});
   }
-  pauseYoutube();
+  pauseSound();
 });
 
 

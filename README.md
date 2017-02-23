@@ -13,7 +13,6 @@ Example: You have opened 20 chrome tabs. You Reading some code or article which 
    ![Pause Youtube Tab](/res/paused.png?raw=true "Paused Youtube Tab")
 
 
-
 Step to install
   - Download Zip file from this Github Repo.
   - Unzip the file somewhere in Computer. 
@@ -24,4 +23,12 @@ Step to install
   - If you want to use this extension in Incognito Windows also, Check "Allow In Incognito" 
 
 
-## Currently Only Supports Youtube Playing Apps.
+### Currently Supported Websites
+  - Facebook  (Only Paused, Does not Resume)
+  - Youtube   (Pauses and Resumes )
+
+### Features
+
+
+
+Please Contribute for other 
